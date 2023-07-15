@@ -198,6 +198,95 @@ return result.rebounds;
 }
 
 
+function mostPontsScored(){
+  let result;
+  let max = 0;
+  let playerName="";
+
+  for (let key in myObj){
+    for (let key2 in myObj[key].players){
+      if(myObj[key].players[key2].points > max){
+        max= myObj[key].players[key2].points
+        playerName=key2
+      }
+    }
+    console.log(max, playerName);
+    result = myObj[key].players[playerName]
+
+    console.log(result)
+    break;
+}
+return result.points;
+}
+function winningTeam(){
+  let result;
+  let max = 0;
+  let team="";
+
+  for (let key in myObj){
+    for (let key2 in myObj[key].players){
+      if(myObj[key].players[key2].points > max){
+        max= myObj[key].players[key2].points
+        playerName=key2
+        team = key
+      }
+    }
+    console.log(max, playerName);
+    result = myObj[team].teamName
+
+    console.log(result)
+    console.log(team);
+    
+    break;
+}
+return result;
+}
+
+
+function playerWithLongestName(){
+  let result;
+  let max = 0;
+  let playerName="";
+
+  for (let key in myObj){
+    for (let key2 in myObj[key].players){
+      if(key2.length-1 > max){
+        max= key2.length-1;
+        playerName=key2;
+      }
+    }
+    console.log(max, playerName);
+    result = playerName;
+    console.log(result)
+    break;
+}
+return result;
+}
+
+function doesLongNameStealATon(){
+  let result;
+  let max = 0;
+  let playerName=""
+  let mykey1, mykey2;
+  for (let key in myObj){
+    for (let key2 in myObj[key].players){
+      if(myObj[key].players[key2].steals > max){
+        max= myObj[key].players[key2].steals
+        playerName=key2
+      }
+    }
+    break;
+}
+console.log(playerName)
+if (playerName === playerWithLongestName()){
+  return true;
+}else{
+  return false
+}
+}
+
+
+
 
 
 
